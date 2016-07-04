@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>PlayedOut</title>
+  <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div ng-app='app' class='app'>
+		<ui-view></ui-view>
+	</div>
 </body>
 </html>

@@ -1,0 +1,1 @@
+var playedOut = angular.module('app', ['ui.router', 'templates'])

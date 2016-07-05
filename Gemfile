@@ -18,6 +18,8 @@ gem 'angular-rails-templates'
 
 gem 'responders'
 
+gem 'devise'
+
 gem 'bower-rails'
 
 # Use ActiveModel has_secure_password

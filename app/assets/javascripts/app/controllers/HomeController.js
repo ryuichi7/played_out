@@ -1,5 +1,5 @@
 function HomeController() {
-	this.message = "hey it's working"
+	this.message="Hi this is Home!"
 }
 
 playedOut

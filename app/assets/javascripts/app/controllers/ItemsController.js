@@ -1,6 +1,6 @@
 function ItemsController(Item) {
-  ctrl = this;
-
+  var ctrl = this;
+  ctrl.isCollapsed = true;
   ctrl.items = Item.query();
 }
 

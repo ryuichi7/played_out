@@ -4,7 +4,7 @@ function Item($resource) {
       method: 'PUT'
     }
   });
-
+  
   return Item
 }
 

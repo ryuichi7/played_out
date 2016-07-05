@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='app' class='app'>
 <head>
   <title>PlayedOut</title>
   <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
+<header ng-include="'nav/_nav.html'"></header>
 <body>
-	<div ng-app='app' class='app'>
-		<ui-view></ui-view>
-	</div>
+  <div class="container">
+    <ui-view></ui-view>
+  </div>
 </body>
 </html>

@@ -7,20 +7,21 @@ module Api
       end
 
       def create
-        @item = Item.new(item_params)
+        @item = current_user.items.build(item_params)
+
         if @item.save
-          respond_with @item
+          respond_with :api, :v1, @item
         end
       end
 
       def show
-      respond_with(Item.find(params[:id]))
+        respond_with(Item.find(params[:id]))
       end
 
       def update
         @item = Item.find(params[:id])
-        if @item.update(note_params)
-          respond_with @item
+        if @item.update(item_params)
+          respond_with :api, :v1, @item
         end
       end
 
@@ -28,10 +29,17 @@ module Api
         respond_with Item.destroy(params[:id])
       end
 
+      def test
+        @item = Item.first
+        @types = Type.all
+        render layout: false
+
+      end
+
       private
 
-      def note_params
-        require(:note).permit(:name, :make, :model)
+      def item_params
+        params.require(:item).permit(:make, :model, :year, :description, :type_id)
       end
     end
   end

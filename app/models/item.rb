@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :user
-  has_many :types
+  belongs_to :type
   has_many :rentals
   has_many :renters, through: :rentals, source: "renter"
 

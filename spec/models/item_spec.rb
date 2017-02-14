@@ -51,12 +51,11 @@ RSpec.describe Item, type: :model do
 
   describe "associations" do
     it { should belong_to(:user) }
-    it { should have_many(:types) }
+    it { should belong_to(:type) }
     it { should have_many(:rentals) }
     it { should have_many(:renters) }
 
     it 'should correctly associate renters' do
-      subject.user = user
       rental.renter = renter
       rental2.renter = renter2
       subject.rentals << rental2

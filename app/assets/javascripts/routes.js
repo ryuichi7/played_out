@@ -5,8 +5,8 @@ playedOut
 			url: '/',
 			templateUrl: 'home.html',
 			controller: 'HomeController as home'
-		}).state('login', {
-			url: '/login',
+		}).state('home.login', {
+			url: 'login',
 			templateUrl: 'auth/_login.html',
 			controller: 'AuthController',
 			onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -17,8 +17,8 @@ playedOut
           console.log(error);
         })
       }]
-		}).state('signup', {
-			url: '/signup',
+		}).state('home.signup', {
+			url: 'signup',
 			templateUrl: 'auth/_register.html',
 			controller: 'AuthController',
 			onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -26,10 +26,14 @@ playedOut
           $state.go('home');
         })
       }]
-		}).state('items', {
-			url: '/items',
+		}).state('home.items', {
+			url: 'items',
 			templateUrl: 'items/index.html',
 			controller: 'ItemsController as item'
+		}).state('home.newItem', {
+			url: 'items/new',
+			templateUrl: 'items/new.html',
+			controller: 'NewItemController as ctrl'
 		});
 
 		$urlRouterProvider.otherwise('/');

@@ -1,0 +1,45 @@
+<div class="form-group">
+  <label for="make" class="col-sm-1 control-label">Make</label>
+  <div class="col-sm-11">
+    <input type="text" ng-model="ctrl.item.make" class="form-control" id="make" name="name" placeholder="Make" autofocus="true">
+  </div>
+  <div class="help-block">
+    <!-- <div ng-messages-include="messages.html"></div> -->
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="model" class="col-sm-1 control-label">Model</label>
+  <div class="col-sm-11">
+    <input type="text" ng-model="ctrl.item.model" class="form-control" id="model" name="model" placeholder="Model" autofocus="true">
+  </div>
+  <div class="help-block">
+    <!-- <div ng-messages-include="messages.html"></div> -->
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="year" class="col-sm-1 control-label">Year</label>
+  <div class="col-sm-11">
+    <input type="number" ng-model="ctrl.item.year" class="form-control" id="year" name="year" placeholder="Year" autofocus="true">
+  </div>
+  <div class="help-block">
+    <!-- <div ng-messages-include="messages.html"></div> -->
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="description" class="col-sm-1 control-label">Description</label>
+  <div class="col-sm-11">
+    <textarea ng-model="ctrl.item.description" id="description" cols="30" rows="4" class="form-control" placeholder="Description"></textarea>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="type" class='col-sm-1 control-label'>Type</label>
+  <div class="col-sm-3">
+    <select class='form-control' id='type' ng-options="type.id as type.name for type in ctrl.types" ng-model="ctrl.item.type_id">
+      <option value=''>Select an instrument type</option>
+    </select>
+  </div>
+</div>

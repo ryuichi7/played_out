@@ -5,8 +5,17 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :items
+      resources :types, only: [:create, :index]
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      get '/test' => 'items#test'
+      post '/test' => 'items#create'
+    end
+  end
+
 
   root 'application#angular'
 
